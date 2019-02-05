@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/43/43074.png"/>
+    <link rel="stylesheet" href="recursos/estilos.css">
+    <script type="text/javascript" src="recursos/funciones.js"></script>
+
+    <title>Puzzle</title>
+  </head>
+  <body onload="cargaPaginaPrincipal()">
+<!--Navegador-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Puzzle</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Bar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="publica/restaurante.html">Restaurante</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Comidas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Desayuno</a>
+                  <a class="dropdown-item" href="#">Comida</a>
+                  <a class="dropdown-item" href="#">Cena</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Conócenos</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0 mr-3" type="submit"><i class="far fa-user"></i></button> 
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-user-plus"></i></i></button>
+            </form>
+          </div>
+        </nav>
+<!--Navegador-->
+<div class="container">
+    <div class="jumbotron  imagenFondoJumbotron">
+        <div class="container texto-blanco">
+          <h1 class="display-4">Puzzle</h1>
+          <p class="lead">Tú pones la compañía, nosotros lo demás.</p>
+        </div>
+      </div>
+    <div class="row text-center">
+      <div class="col-sm ">
+          <button type="button" class="btn btn-warning btn-circle btn-xl"><a href="#cervezas"><i class="fas fa-3x fa-lg fa-beer"></i></a></button>
+      </div>
+      <div class="col-sm">
+          <button type="button" class="btn btn-warning btn-circle btn-xl"><a href="publica/restaurante.html"><i class="fas fa-3x fa-lg fa-utensils"></i></a></button>
+      </div>
+      <div class="col-sm">
+          <button type="button" class="btn btn-warning btn-circle btn-xl"><i class="fas fa-3x fa-lg fa-calendar-plus"></i></button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="recursos/imagenes/imagenSport.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Deportes</h5>
+                <p class="card-text">Vive la retransmisión de los mejores eventos deportivos. </p>
+                <a  class="btn btn-outline-dark">+ INFO</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="recursos/imagenes/imagenBeerFriend.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Fiestas</h5>
+                <p class="card-text">Ven y disfruta en nuestros locales  de las mejores fiestas irlandesas. </p>
+                <a  class="btn btn-outline-dark">+ INFO</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="recursos/imagenes/eatHam.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Cocina internacional</h5>
+                <p class="card-text">Descubre nuestra propuesta gastronómica más reconocida.</p>
+                <a  class="btn btn-outline-dark">+ INFO</a>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center tituloCervezasScroll">
+        <p class="tituloCervezasScrollTitulo">NUESTRAS CERVEZAS </p>
+        <p class="tituloCervezasScrollPie">Disfruta de nuestra amplia variedad de cervezas internacionales  </p>
+      </div>
+        <div class="scrollmenu" name="cervezas" id="cervezas">
+          
+            <img src="recursos/imagenes/beer1.png" onmouseover="cervezaSi('judas')" onmouseout="cervezaNo('judas')" alt="Cerveza">
+            <img src="recursos/imagenes/beer2.png" onmouseover="cervezaSi('mort')" onmouseout="cervezaNo('mort')" alt="Cerveza">
+            <img src="recursos/imagenes/beer3.png" onmouseover="cervezaSi('murtphys')" onmouseout="cervezaNo('murtphys')" alt="Cerveza">
+            <img src="recursos/imagenes/beer4.png" onmouseover="cervezaSi('heineken')" onmouseout="cervezaNo('heineken')" alt="Cerveza">
+            <img src="recursos/imagenes/beer5.png" onmouseover="cervezaSi('paulaner')" onmouseout="cervezaNo('paulaner')" alt="Cerveza">
+            <img src="recursos/imagenes/beer6.png" onmouseover="cervezaSi('affligem')" onmouseout="cervezaNo('affligem')" alt="Cerveza">
+            <img src="recursos/imagenes/beer7.png" onmouseover="cervezaSi('maes')" onmouseout="cervezaNo('maes')" alt="Cerveza">
+            <img src="recursos/imagenes/beer8.png" onmouseover="cervezaSi('fosters')" onmouseout="cervezaNo('fosters')" alt="Cerveza">
+            <img src="recursos/imagenes/beer9.png" onmouseover="cervezaSi('guinnes')" onmouseout="cervezaNo('guinnes')" alt="Cerveza">
+            <img src="recursos/imagenes/beer10.png" onmouseover="cervezaSi('sanMiguel')" onmouseout="cervezaNo('sanMiguel')" alt="Cerveza">
+            <img src="recursos/imagenes/beer11.png" onmouseover="cervezaSi('mahou')" onmouseout="cervezaNo('mahou')" alt="Cerveza">
+            <img src="recursos/imagenes/beer13.png" onmouseover="cervezaSi('coronita')" onmouseout="cervezaNo('coronita')" alt="Cerveza">
+          </div>
+          <div id="idContenedorCerveza" class="w-100 p-3 text-center cuadroCervezas">
+              <div class="card border-dark text-center" >
+                <div class="card-header"> <p class="text-center" id="detalleCerveza"></p></div>
+                  <div class="card-body text-dark">
+                  <h5 class="card-title"><p class="text-center" id="detalleSubTituloCerveza"></p</h5>
+                  <p class="card-text"><p class="text-center" id="detalleCuerpoCerveza"></p</p>
+                </div>
+              </div>
+          </div>
+    </div>
+    <br>
+<!--<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <a class="twitter-timeline" data-lang="es" data-width="500" data-height="350" data-theme="dark" href="https://twitter.com/NFL?ref_src=twsrc%5Etfw">Tweets by NFL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <a class="twitter-timeline" data-lang="es" data-width="500" data-height="350" data-theme="dark" href="https://twitter.com/HoustonTexans?ref_src=twsrc%5Etfw">Tweets by NFL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
+    </div>
+  </div>-->
+<br>
+  
+  <footer>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="text-center">
+           <a href="index.html"> <img class="contenedorImagenPie" src="recursos/imagenes/logoPuzzleVerde.png"></a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 ">
+          <div class="textoPie">
+            <h4>Puzzle </h4>
+            <p>
+                Official Puzzle Pub recomienda el consumo responsable (6,4º) y los hábitos de vida saludables: combina actividad física con alimentación variada y equilibrada.
+            </p>
+          </div>
+          </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+          Copyright @ Angel Mira. Iconos diseñados por Fontawesome.
+      </div>
+    </footer>
+    
+  <!--JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  <!--JavaScript-->
+  </body>
+</html>

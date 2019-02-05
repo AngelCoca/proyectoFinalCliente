@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Playfair+Display');
+
+
+.imagenFondoJumbotron{
+    background-image: url("imagenes/imagen1.jpg");
+}
+
+.texto-blanco{
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.btn-circle.btn-xl {
+    width: 150px;
+    height: 150px;
+    padding: 10px 16px;
+    font-size: 24px;
+    border-radius: 100px;
+    background-color: #F9E79F;
+    border-color: #F9E79F;
+  }
+  
+
+  div.scrollmenu {
+   background-color: #181d19;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  div.scrollmenu img {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+
+
+  
+.contenedorCerveza{
+    text-align: center;
+}
+
+footer{
+    background-color: black;
+    color: whitesmoke;
+}
+
+.contenedorImagenPie{
+    margin-top: 8%;
+    margin-left: 8%;
+    margin-bottom: 8%;
+    height: 200px;
+    width: 200px;
+}
+
+.textoPie{
+    margin-top: 8%;
+    margin-right: 8%;
+    margin-bottom: 8%;
+    text-align : justify;
+}
+
+.cuadroCervezas{
+    margin-left:10%;
+    margin-right: 10%;
+}
+
+.tituloCervezasScroll{
+    text-align: center;
+    background-color: #181d19;
+
+}
+
+.tituloCervezasScrollTitulo{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 40px;
+    color: #d3ac46;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+
+.tituloCervezasScrollPie{
+    color: #ffffff;
+    margin: auto;
+}
+
+
+/*Restaurante*/
+
+
+.imagenEatRestaurante{
+    height: 500px;
+    width: 100%;
+}
+
+.textoCabeceraRestaurante{
+    font-family: 'Major Mono Display', monospace;
+    font-size: 100px;
+}
+
+.listaMenuRestaurante{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 5%;
+    border: 1px solid black;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+.listaMenuRestaurante h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+
+.listaMenuRestaurante h5{
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+.contenedorRangoClass{
+    bottom: 20px;
+    position: absolute;
+    margin-left: 25% ;
+    width: 250px;
+}
+
+.botonMiPedidoGeneral{
+    bottom: 10px;
+    position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+.whatsapp{
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    border: 0px;
+}
