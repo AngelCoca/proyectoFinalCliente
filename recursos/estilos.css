@@ -12,6 +12,8 @@
 
 }
 
+
+
 .btn-circle.btn-xl {
     width: 150px;
     height: 150px;
@@ -98,10 +100,9 @@ footer{
 }
 
 .textoCabeceraRestaurante{
+    font-size: 40px;
     font-family: 'Major Mono Display', monospace;
-    font-size: 100px;
 }
-
 .listaMenuRestaurante{
     font-family: 'Playfair Display', serif;
     font-size: 20px;

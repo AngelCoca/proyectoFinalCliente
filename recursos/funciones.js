@@ -6,6 +6,7 @@ var tipoDeCarne;
 var cervezas = ["judas", "mort", "murtphys", "heineken", "paulaner", "affligem", "maes", "fosters", "guinnes", "sanMiguel", "mahou", "coronita"];
 var cervezaJudas = new Cerveza ("judas", "Judas", "Judas, una cerveza traicionera", "no porque no esté todo lo buena que su cuidado diseño y su precio anuncian, sino porque esconde bastante bien un alto grado alcohólico que notaremos sólo cuando vayamos a levantarnos de nuestro asiento.");
 var cervezaMort = new Cerveza ("mort", "Mort", "Cervezas de fermentación espontánea", "Son cervezas exclusivamente elaboradas por Cervecerías localizadas en el valle del Sena, al sureste de Bruselas, en la región conocida como Pajotten. Sus orígenes se remontan a inicios del siglo XVII, en viejos manuscritos monásticos.");
+var cervezaHeineken = new Cerveza ("heineken", "Heineken", "El insípido ámbar australiano", "Amarilla como el sol, azul como el mar. La etiqueta de Corona te lleva a la mejor playa del mundo: aquella que sientes dentro de ti.");
 var cervezaMurtphys = new Cerveza ("murtphys", "Murtphys", "La cerveza irlandesa Murphy’s Irish Red", "El origen de esta cerveza se remonta a 1856, cuando James J. Murphy fundó la fábrica de Murphy´s en Cork (Irlanda) junto con otros tres hermanos pertenecientes a una familia de industriales. Una de las primeras cervezas que se elaboraron fue una tipo Ale denominada Lady´s Well");
 var cervezaPaulaner = new Cerveza ("paulaner", "Paulaner", "El más refinado arte muniqués de la elaboración de cerveza", "Como marca líder de cerveza de trigo, la Cervecería Paulaner asume responsabilidad y aboga por un consumo responsable de bebidas alcohólicas en el marco de las disposiciones legales. ");
 var cervezaAffligem = new Cerveza ("affligem", "Affligem", "Affligem rebosa historia, desde la Edad Media hasta la actualidad", "Todo empieza en el molino, donde rompemos la cáscara exterior de la cebada de malta y liberamos el almidón.");
@@ -38,7 +39,7 @@ function Menu(primero, segundo, postre){
 
 
 function iniciarArray(){
-   listaCervezas = new Array (cervezaJudas, cervezaMort, cervezaMurtphys, cervezaPaulaner, cervezaAffligem , cervezaMaes, cervezaFosters, cervezaGuinnes, cervezaSanMiguel, cervezaMahou, cervezaCoronita);
+   listaCervezas = new Array (cervezaJudas, cervezaMort, cervezaHeineken, cervezaMurtphys, cervezaPaulaner, cervezaAffligem , cervezaMaes, cervezaFosters, cervezaGuinnes, cervezaSanMiguel, cervezaMahou, cervezaCoronita);
 }
 
 
