@@ -454,8 +454,30 @@ function crearNuevoComentarioJson(){
     var obj = { titulo: tituloComentario, imagen: imagenComentario, cuerpo: cuerpoComentario};
     var myJSON = JSON.stringify(obj);
 
-    crearComentarioNuevo(myJSON)
-    console.log(myJSON)
+
+
+try {
+   // datosJson.setItem('resenyas', myJSON);
+ //   datosJson.push({"resenyas":{ titulo: tituloComentario, imagen: imagenComentario, cuerpo: cuerpoComentario}});
+
+ var url = "../recursos/datosResenyas.json";
+ const data = {   "resenyas":{ titulo: tituloComentario, imagen: imagenComentario, cuerpo: cuerpoComentario}}
+
+ //loop over and push all the data in content data.content.push({ "username" : "harish", "password" : "harish123" });
+ 
+ const jsonData = JSON.stringify(data);
+ 
+ const fs = require('fs'); fs.writeFile(url, jsonData, 'utf8', callback)
+
+
+} catch (error) {
+    console.log("Error al push: "+ error);
+
+}
+console.log(datosJson)
+
+   // crearComentarioNuevo(myJSON)
+
 }
 
 function crearComentarioNuevo(dato){
