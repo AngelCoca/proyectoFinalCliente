@@ -440,7 +440,7 @@ function rellenarPaginaResenyas(datos){
         "</div>"
     }
     console.log(datosAMostrar)
-    document.getElementById("resenyasEscritas").innerHTML = datosAMostrar;
+    document.body.innerHTML += datosAMostrar;
 }
 
 
