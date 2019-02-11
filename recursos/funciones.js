@@ -425,6 +425,7 @@ function cargaPaginaResenyas(){
 
 
 function rellenarPaginaResenyas(datos){
+    console.log("LLega aquí")
     var datosAMostrar =""
     var datosJson = JSON.parse(datos)
     for(const i = 0; i < datosJson.length; i++) {
