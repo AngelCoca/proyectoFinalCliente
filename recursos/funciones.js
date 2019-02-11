@@ -412,7 +412,7 @@ function cargaPaginaResenyas(){
       if (this.readyState == 4 && this.status == 200) {
         datosJson = this.responseText;
         rellenarPaginaResenyas(datosJson);
-        console.log(datosJson)
+        
       }
     };
     xmlhttp.open("GET", url, true);
@@ -432,7 +432,7 @@ function rellenarPaginaResenyas(datos){
     console.log("Longitud " + datosJson.resenyas)
     for(var i in datosJson.resenyas) {
         datosAMostrar += "<div class='media'>" +
-        "<img class='mr-3' src='"+datosJson[i].imagen+"' >"+
+       
             "<div class='media-body'>"+
                 "<h5 class='mt-0'>"+ datosJson[i].titulo +"</h5>"+
                 +datosJson[i].cuerpo +
