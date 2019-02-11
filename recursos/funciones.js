@@ -434,7 +434,7 @@ function rellenarPaginaResenyas(datos){
         datosAMostrar += "<div class='media'>" +
        
             "<div class='media-body'>"+
-                "<h5 class='mt-0'>"+ datosJson.resenyas[i].titulo +"</h5>"+
+                "<h5 class='mt-0'>"+ datosJson.resenyas[i].titulo +"</h5>"
                 +datosJson.resenyas[i].cuerpo +
             "</div>"+
         "</div>"
