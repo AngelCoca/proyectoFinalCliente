@@ -1,0 +1,21 @@
+{
+    "resenyas" :
+    [
+        {
+            "titulo" : "Me ha gustado mucho",
+            "imagen" : "imagenes/icon.png",
+            "cuerpo" : "Estuvimos el otro día con los amigos y muy buen servicio, lo recomiendo"
+        }, 
+        {
+            "titulo" : "Buenísima la cerveza",
+            "imagen" : "imagenes/icon.png",
+            "cuerpo" : "Fuimos a por una cerveza y salimos con una experiencia inolvidable!"
+        }, 
+        {
+            "titulo" : "Espectacular el hambiente",
+            "imagen" : "imagenes/icon.png",
+            "cuerpo" : "Buen pub irlandes, vimos el la Super Bowl y además hicimos nuevas amistades"
+        }
+    ]
+
+}

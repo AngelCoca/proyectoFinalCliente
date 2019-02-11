@@ -19,7 +19,7 @@ var cervezaCoronita = new Cerveza ("coronita", "Coronita", "CORONAS, LIMAS Y EL 
 
 menuA = new Menu ("Setas salteadas", "Chuletón a la brasa", "Flan de café");
 menuB =  new Menu  ("Ensalada con parmesano", "Chuletas de lechal", "Variado de la casa");
-menuC = new Menu ("Caldo de carne", "Pesacado con champiñones", "Fruta de temporada");
+menuC = new Menu ("Caldo de carne", "Pescado con champiñones", "Fruta de temporada");
 
 //Objeto cerveza
 function Cerveza(name, nombre, titulo, descripcion){
@@ -145,6 +145,7 @@ function rellenarPedido(platoElegido){
 
     if(platosPedidos <9){
        
+
         var node = document.createElement("li");
         var textnode = document.createTextNode(platoElegido);
         node.appendChild(textnode);
@@ -390,3 +391,37 @@ function comprobarSiEsNumero(caracter){
     return esNumero;
 }
 /*-------VALIDADORES------------*/
+
+
+
+/*---------RESEÑAS -----------*/
+
+
+var datosJson;
+function cargaPaginaResenyas(){
+
+   var url = "../recursos/datosResenyas.json";
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+      xmlhttp = new XMLHttpRequest();
+    } else {
+      // code for older browsers
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        datosJson = this.responseText;
+        console.log(datosJson)
+      }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+
+
+
+}
+
+
+
+/*---------RESEÑAS -----------*/
