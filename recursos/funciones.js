@@ -427,7 +427,7 @@ function cargaPaginaResenyas(){
 function rellenarPaginaResenyas(datos){
 
     try{
-    var datosAMostrar ="<ul class='list-unstyled'>";
+    var datosAMostrar =" <div class='container'><ul class='list-unstyled'>";
     var datosJson = JSON.parse(datos);
     console.log("Longitud " + datosJson.resenyas)
     for(var i in datosJson.resenyas) {
@@ -441,7 +441,7 @@ function rellenarPaginaResenyas(datos){
         "<hr>"+
       "</li>"
     }
-    datosAMostrar += "<ul>"
+    datosAMostrar += "<ul> </div>"
     document.body.innerHTML += datosAMostrar;
     } catch (e){
         console.log("Error " +e)
