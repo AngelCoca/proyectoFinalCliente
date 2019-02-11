@@ -429,9 +429,8 @@ function rellenarPaginaResenyas(datos){
     try{
     var datosAMostrar =" <div class='container'><ul class='list-unstyled'>";
     var datosJson = JSON.parse(datos);
-    console.log("Longitud " + datosJson.resenyas)
     for(var i in datosJson.resenyas) {
-        datosAMostrar += " <li class='media'>"+
+        datosAMostrar += " <li id='listaComentariosJS' class='media'>"+
         "<img  height='64' width='64' src='../recursos/"+datosJson.resenyas[i].imagen+"' class='mr-3' alt='Icono perfil'></img>"+
         "<div class='media-body'>"+
           "<h5 class='mt-0 mb-1'>" + datosJson.resenyas[i].titulo+"</h5>"+
@@ -448,5 +447,35 @@ function rellenarPaginaResenyas(datos){
     }
 }
 
+function crearNuevoComentarioJson(){
+    var tituloComentario = document.getElementById("idTituloComentario").value;
+    var cuerpoComentario = document.getElementById("idCuerpoComentario").value;
+    var imagenComentario =   "imagenes/icon.png";
+    var obj = { titulo: tituloComentario, imagen: imagenComentario, cuerpo: cuerpoComentario};
+    var myJSON = JSON.stringify(obj);
+
+    crearComentarioNuevo(myJSON)
+    console.log(myJSON)
+}
+
+function crearComentarioNuevo(dato){
+
+
+
+    var datosAMostrar = "";
+    var datosJson = JSON.parse(dato);
+    console.log(datosJson)
+
+        datosAMostrar += " <li class='media'>"+
+        "<img  height='64' width='64' src='../recursos/"+datosJson.imagen+"' class='mr-3' alt='Icono perfil'></img>"+
+        "<div class='media-body'>"+
+          "<h5 class='mt-0 mb-1'>" + datosJson.titulo+"</h5>"+
+          "<p>"+ datosJson.cuerpo+"</p>"+
+         " <p><i class='fas fa-thumbs-up'></i> Me gusta <i class='fas fa-thumbs-down'></i> No me gusta</p>"+
+        "</div>"+
+        "<hr>"+
+      "</li>"
+      document.getElementById("listaComentariosJS").innerHTML = datosAMostrar;
+}
 
 /*---------RESEÑAS -----------*/
