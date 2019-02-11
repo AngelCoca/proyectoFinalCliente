@@ -425,11 +425,12 @@ function cargaPaginaResenyas(){
 
 
 function rellenarPaginaResenyas(datos){
+    console.log("Datos sin JSON " + datos)
     try{
     var datosAMostrar ="";
-    var datosJson = JSON.parse(datos)
-    console.log("Longitud " + datosJson.length)
-    for(const i = 0; i < datosJson.length; i++) {
+    var datosJson = JSON.parse(datos);
+    console.log("Longitud " + datosJson.resenyas)
+    for(var i in datosJson.resenyas) {
         datosAMostrar += "<div class='media'>" +
         "<img class='mr-3' src='"+datosJson[i].imagen+"' >"+
             "<div class='media-body'>"+
