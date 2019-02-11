@@ -460,8 +460,8 @@ function crearNuevoComentarioJson(){
 
 function crearComentarioNuevo(dato){
 
-
-
+    console.log("llega al crear nuevo comentario")
+try{
     var datosAMostrar = "";
     var datosJson = JSON.parse(dato);
     console.log(datosJson)
@@ -476,6 +476,9 @@ function crearComentarioNuevo(dato){
         "<hr>"+
       "</li>"
       document.getElementById("listaComentariosJS").innerHTML = datosAMostrar;
+} catch (e){
+    console.log("El error -> " +e)
+}
 }
 
 /*---------RESEÑAS -----------*/
