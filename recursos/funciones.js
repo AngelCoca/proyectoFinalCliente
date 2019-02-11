@@ -427,19 +427,19 @@ function cargaPaginaResenyas(){
 function rellenarPaginaResenyas(datos){
 
     try{
-    var datosAMostrar ="";
+    var datosAMostrar ="<ul class='list-unstyled'>";
     var datosJson = JSON.parse(datos);
     console.log("Longitud " + datosJson.resenyas)
     for(var i in datosJson.resenyas) {
-        datosAMostrar += "<div class='media'>" +
-        "<img  height='64' width='64' src='../recursos/"+datosJson.resenyas[i].imagen+"' class='mr-3' alt='Icono perfil'></img>"+
-            "<div class='media-body'>"+
-                "<h5 class='mt-0'>"+ datosJson.resenyas[i].titulo +"</h5>"
-                +datosJson.resenyas[i].cuerpo +
-            "</div>"+
-        "</div>"
+        datosAMostrar += " <li class='media'>"+
+        "<img src='"+datosJson.resenyas[i].imagen+"' class='mr-3' alt='Icono perfil'></img>"+
+        "<div class='media-body'>"+
+          "<h5 class='mt-0 mb-1'>" + datosJson.resenyas[i].titulo+"</h5>"+
+          +datosJson.resenyas[i].cuerpo +
+        "</div>"+
+      "</li>"
     }
-    console.log(datosAMostrar)
+    datosAMostrar += "<ul>"
     document.body.innerHTML += datosAMostrar;
     } catch (e){
         console.log("Error " +e)
