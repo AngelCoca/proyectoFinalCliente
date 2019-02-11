@@ -411,6 +411,7 @@ function cargaPaginaResenyas(){
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         datosJson = this.responseText;
+        alert("Siguiente paso")
         rellenarPaginaResenyas(datosJson);
         console.log(datosJson)
       }
@@ -425,6 +426,7 @@ function cargaPaginaResenyas(){
 
 
 function rellenarPaginaResenyas(datos){
+    alert("Llega")
     console.log("LLega aquí")
     var datosAMostrar =""
     var datosJson = JSON.parse(datos)
