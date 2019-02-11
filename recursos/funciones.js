@@ -411,6 +411,7 @@ function cargaPaginaResenyas(){
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         datosJson = this.responseText;
+        rellenarPaginaResenyas(datosJson);
         console.log(datosJson)
       }
     };
@@ -422,6 +423,22 @@ function cargaPaginaResenyas(){
 
 }
 
+
+function rellenarPaginaResenyas(datos){
+    var datosAMostrar =""
+    var datosJson = JSON.parse(datos)
+    for(const i = 0; i < datosJson.length; i++) {
+        datosAMostrar += "<div class='media'>" +
+        "<img class='mr-3' src='"+datosJson[i].imagen+"' >"+
+            "<div class='media-body'>"+
+                "<h5 class='mt-0'>"+ datosJson[i].titulo +"</h5>"+
+                +datosJson[i].cuerpo +
+            "</div>"+
+        "</div>"
+    }
+
+    document.getElementById("resenyasEscritas").innerHTML = datosAMostrar
+}
 
 
 /*---------RESEÑAS -----------*/

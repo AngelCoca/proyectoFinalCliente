@@ -141,7 +141,11 @@ footer{
     background-color:#25d366;
     color:#FFF;
     border-radius:50px;
-    text-align:center;
+    text-align:center !important;
     font-size:30px;
     border: 0px;
+}
+
+.whatsapp-icon{
+    margin-left: 25%;
 }
