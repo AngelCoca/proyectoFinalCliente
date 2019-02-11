@@ -425,7 +425,7 @@ function cargaPaginaResenyas(){
 
 
 function rellenarPaginaResenyas(datos){
-    console.log("Datos sin JSON " + datos)
+
     try{
     var datosAMostrar ="";
     var datosJson = JSON.parse(datos);
@@ -434,7 +434,7 @@ function rellenarPaginaResenyas(datos){
         datosAMostrar += "<div class='media'>" +
        
             "<div class='media-body'>"+
-                "<h5 class='mt-0'>"+ datosJson[i].titulo +"</h5>"+
+                "<h5 class='mt-0'>"+ datosJson.resenyas[i].titulo +"</h5>"+
                 +datosJson[i].cuerpo +
             "</div>"+
         "</div>"
