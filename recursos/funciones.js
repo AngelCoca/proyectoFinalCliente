@@ -435,7 +435,7 @@ function rellenarPaginaResenyas(datos){
         "<img  height='64' width='64' src='../recursos/"+datosJson.resenyas[i].imagen+"' class='mr-3' alt='Icono perfil'></img>"+
         "<div class='media-body'>"+
           "<h5 class='mt-0 mb-1'>" + datosJson.resenyas[i].titulo+"</h5>"+
-          "<p>"+ datosJson.resenyas[i].cuerpo+"</p>"
+          "<p>"+ datosJson.resenyas[i].cuerpo+"</p>"+
          " <p><i class='fas fa-thumbs-up'></i> Me gusta <i class='fas fa-thumbs-down'></i> No me gusta</p>"+
         "</div>"+
         "<hr>"+
