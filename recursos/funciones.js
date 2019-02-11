@@ -442,7 +442,7 @@ function rellenarPaginaResenyas(datos){
       "</li>"
     }
     datosAMostrar += "<ul> </div>"
-    document.body.innerHTML += datosAMostrar;
+    document.getElementById("comentariosJson").innerHTML = datosAMostrar;
     } catch (e){
         console.log("Error " +e)
     }
