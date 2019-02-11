@@ -430,6 +430,7 @@ function rellenarPaginaResenyas(datos){
     console.log("LLega aquí")
     var datosAMostrar =""
     var datosJson = JSON.parse(datos)
+    console.log("Longitud " + datosJson.length)
     for(const i = 0; i < datosJson.length; i++) {
         datosAMostrar += "<div class='media'>" +
         "<img class='mr-3' src='"+datosJson[i].imagen+"' >"+
