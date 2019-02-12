@@ -49,6 +49,7 @@ function cargaPaginaPrincipal(){
 }
 
 function cervezaSi(cerveza){
+    iniciarArray();
     document.getElementById("idContenedorCerveza").style.display = 'block'
     completarInformacionCerveza(cerveza);
 }
@@ -58,7 +59,6 @@ function cervezaNo(cerveza){
 }
 
 function completarInformacionCerveza(cerveza){
-    //console.log(listaCervezas);
     for(var i = 0; i<listaCervezas.length; i++){
         if(listaCervezas[i].id == cerveza){
           document.getElementById("detalleCerveza").innerHTML = listaCervezas[i].title;
@@ -497,3 +497,18 @@ try{
 }
 
 /*---------RESEÑAS -----------*/
+
+
+/*---------RESERVAS-----------*/
+
+function cargaPaginaReservas() {
+   
+}
+
+
+
+
+
+
+
+/*---------RESERVAS-----------*/

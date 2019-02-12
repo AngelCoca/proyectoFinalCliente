@@ -184,3 +184,10 @@ font-family: 'Quicksand', sans-serif;
 
     font-size: 50px;
 }
+
+
+/* -------- RESERVAS ---------*/
+.imagenLateralFormularioReserva{
+    width: 80%;
+    height: 60%;
+}

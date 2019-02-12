@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
+   <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/43/43074.png"/>
+        <link rel="stylesheet" href="../recursos/estilos.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="../recursos/funciones.js"></script>
+        <title>Puzzle</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+</head>
+<body onload="cargaPaginaReservas()">
+<!--Navegador-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.html">Puzzle</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../index.html">Bar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="restaurante.html">Restaurante</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Conócenos</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <button class="btn btn-outline-success my-2 my-sm-0 mr-3" type="submit"><i class="far fa-user"></i></button> 
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-user-plus"></i></i></button>
+          </form>
+        </div>
+      </nav>
+<!--Navegador-->
+
+<!--Cuerpo-->
+<br>
+<div class="container">
+    <h3>Reserva</h3>
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="../recursos/imagenes/beerPubVertical.jpg" class="imagenLateralFormularioReserva">
+        </div>
+        <div class="col-lg-6">
+                <form>
+                        <div class="form-group">
+                                <label for="formControlName">Nombre</label>
+                                <input type="name" class="form-control" id="formControlName" placeholder="Jose Miguel">
+                            </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Correo</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="jose@miguel.com">
+                        </div>
+                        <div class="form-group">
+                        <label for="exampleFormControlSelect1">Personas</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Indicaciones</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!--Cuerpo-->
+<!--Footer-->
+<footer>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class="text-center">
+             <a href="../index.html"> <img class="contenedorImagenPie" src="../recursos/imagenes/logoPuzzleVerde.png"></a>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+            <div class="textoPie text-center">
+              <h4>Puzzle </h4>
+              <p class="text-center">
+                  Official Puzzle Pub recomienda el consumo responsable (6,4º) y los hábitos de vida saludables: combina actividad física con alimentación variada y equilibrada.
+              </p>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+            Copyright @ Angel Mira. Iconos diseñados por Fontawesome.
+        </div>
+      </footer>
+<!--Footer-->
+
+ <!--JavaScript-->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+ <!--JavaScript--->
+</body>
+</html>
+
+</body>
+</html>

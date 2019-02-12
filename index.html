@@ -12,7 +12,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
     <title>Puzzle</title>
   </head>
   <body onload="cargaPaginaPrincipal()">
@@ -57,7 +56,7 @@
           <button type="button" class="btn btn-warning btn-circle btn-xl"><a href="publica/restaurante.html"><i class="fas fa-3x fa-lg fa-utensils"></i></a></button>
       </div>
       <div class="col-sm">
-          <button type="button" class="btn btn-warning btn-circle btn-xl"><i class="fas fa-3x fa-lg fa-calendar-plus"></i></button>
+          <button type="button" class="btn btn-warning btn-circle btn-xl"><a href="publica/reservas.html"><i class="fas fa-3x fa-lg fa-calendar-plus"></i></a></button>
       </div>
     </div>
     <br>
@@ -97,10 +96,10 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 text-center tituloCervezasScroll">
         <p class="tituloCervezasScrollTitulo">NUESTRAS CERVEZAS </p>
-        <p class="tituloCervezasScrollPie">Disfruta de nuestra amplia variedad de cervezas internacionales  </p>
+        <p class="tituloCervezasScrollPie">Disfruta de nuestra amplia variedad de cervezas internacionales.</p>
+        <p class="tituloCervezasScrollPie">Desliza para ver más   </p>
       </div>
-        <div class="scrollmenu" name="cervezas" id="cervezas">
-          
+        <div class="scrollmenu" name="cervezas" id="cervezas">  
             <img src="recursos/imagenes/beer1.png" onmouseover="cervezaSi('judas')" onmouseout="cervezaNo('judas')" alt="Cerveza">
             <img src="recursos/imagenes/beer2.png" onmouseover="cervezaSi('mort')" onmouseout="cervezaNo('mort')" alt="Cerveza">
             <img src="recursos/imagenes/beer3.png" onmouseover="cervezaSi('murtphys')" onmouseout="cervezaNo('murtphys')" alt="Cerveza">
