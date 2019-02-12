@@ -412,7 +412,7 @@ function cargaPaginaResenyas(){
       if (this.readyState == 4 && this.status == 200) {
         datosJson = this.responseText;
         rellenarPaginaResenyas(datosJson);
-        
+        rellenarValoresCajas(datosJson)
       }
     };
     xmlhttp.open("GET", url, true);
@@ -433,18 +433,36 @@ function rellenarPaginaResenyas(datos){
         datosAMostrar += " <li  class='media'>"+
         "<img  height='64' width='64' src='../recursos/"+datosJson.resenyas[i].imagen+"' class='mr-3' alt='Icono perfil'></img>"+
         "<div class='media-body'>"+
-          "<h5 class='mt-0 mb-1'>" + datosJson.resenyas[i].titulo+"</h5>"+
+          "<h5 class='font-weight-bold'>" + datosJson.resenyas[i].titulo+"</h5>"+
           "<p>"+ datosJson.resenyas[i].cuerpo+"</p>"+
-         " <p><i class='fas fa-thumbs-up'></i> Me gusta <i class='fas fa-thumbs-down'></i> No me gusta</p>"+
+         " <p><i class='fas fa-thumbs-up manitaMegusta'></i> Me gusta <i class='fas fa-thumbs-down manitaNoMeGusta'></i> No me gusta</p>"+
         "</div>"+
-        "<hr>"+
-      "</li>"
+      "</li>"+
+     "<hr>"
     }
     datosAMostrar += "<ul> </div>"
     document.getElementById("comentariosJson").innerHTML = datosAMostrar;
     } catch (e){
         console.log("Error " +e)
     }
+}
+
+function rellenarValoresCajas(datos){
+    var datosJson = JSON.parse(datos);
+
+
+    document.getElementById("idTextoCompartenos").innerHTML = datosJson.especificacion[0].compartenos;
+    document.getElementById("idTextoRangoPrecio").innerHTML = datosJson.especificacion[0].detalles[0].textoRangoPrecio;
+    document.getElementById("idPrecioRangoPrecio").innerHTML = datosJson.especificacion[0].detalles[0].precioRangoPrecio;
+    document.getElementById("idTextoTiposDeCocina").innerHTML = datosJson.especificacion[0].detalles[0].textoTiposDeCocina;
+    document.getElementById("idTextoExplicativoTiposDeCocina").innerHTML = datosJson.especificacion[0].detalles[0].textoExplicativoTiposDeCocina;
+    document.getElementById("idtextoDietasEspeciales").innerHTML =datosJson.especificacion[0].detalles[0].textoDietasEspeciales;
+    document.getElementById("idTextoUbicacicion").innerHTML = datosJson.especificacion[0].TextoUbicacicion;
+    document.getElementById("idUbicacion").innerHTML = datosJson.especificacion[0].Ubicacion;
+    document.getElementById("idtelefono").innerHTML += " " +datosJson.especificacion[0].telefono;
+
+
+
 }
 
 function crearNuevoComentarioJson(){
@@ -454,49 +472,24 @@ function crearNuevoComentarioJson(){
     var obj = { titulo: tituloComentario, imagen: imagenComentario, cuerpo: cuerpoComentario};
     var myJSON = JSON.stringify(obj);
 
-
-
-try {
-   // datosJson.setItem('resenyas', myJSON);
- //   datosJson.push({"resenyas":{ titulo: tituloComentario, imagen: imagenComentario, cuerpo: cuerpoComentario}});
-
- var url = "../recursos/datosResenyas.json";
- const data = {   "resenyas":{ titulo: tituloComentario, imagen: imagenComentario, cuerpo: cuerpoComentario}}
-
- //loop over and push all the data in content data.content.push({ "username" : "harish", "password" : "harish123" });
- 
- const jsonData = JSON.stringify(data);
- 
- const fs = require('fs'); fs.writeFile(url, jsonData, 'utf8', callback)
-
-
-} catch (error) {
-    console.log("Error al push: "+ error);
-
-}
-console.log(datosJson)
-
-   // crearComentarioNuevo(myJSON)
-
+    crearComentarioNuevo(myJSON)
 }
 
 function crearComentarioNuevo(dato){
 
-    console.log("llega al crear nuevo comentario")
 try{
     var datosAMostrar = "";
     var datosJson = JSON.parse(dato);
-    console.log(datosJson)
 
         datosAMostrar += " <li class='media'>"+
         "<img  height='64' width='64' src='../recursos/"+datosJson.imagen+"' class='mr-3' alt='Icono perfil'></img>"+
         "<div class='media-body'>"+
-          "<h5 class='mt-0 mb-1'>" + datosJson.titulo+"</h5>"+
+          "<h5 class='font-weight-bold'>" + datosJson.titulo+"</h5>"+
           "<p>"+ datosJson.cuerpo+"</p>"+
-         " <p><i class='fas fa-thumbs-up'></i> Me gusta <i class='fas fa-thumbs-down'></i> No me gusta</p>"+
-        "</div>"+
-        "<hr>"+
-      "</li>"
+          " <p><i class='fas fa-thumbs-up manitaMegusta'></i> Me gusta <i class='fas fa-thumbs-down manitaNoMeGusta'></i> No me gusta</p>"+
+          "</div>"+
+          "</li>"+
+         "<hr>"
       document.getElementById("listaComentariosJS").innerHTML += datosAMostrar;
 } catch (e){
     console.log("El error -> " +e)

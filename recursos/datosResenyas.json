@@ -16,6 +16,25 @@
             "imagen" : "imagenes/icon.png",
             "cuerpo" : "Buen pub irlandes, vimos la Super Bowl y además hicimos nuevas amistades"
         }
+    ], 
+    "especificacion":
+    [
+        {
+            "compartenos" :  "Compartenos con tus amigos y obtén un descuento en tu consumición",
+            "detalles" : 
+            [
+                {
+                    "textoRangoPrecio" : "Rango de precios",
+                    "precioRangoPrecio" : "5€ - 20",
+                    "textoTiposDeCocina" :  "Tipos de cocina",
+                    "textoExplicativoTiposDeCocina": "Internacional",
+                    "textoDietasEspeciales" :  "Opciones sin gluten"
+                }
+            ],
+            "TextoUbicacicion" :  "Encuéntranos",
+            "Ubicacion" :  "Avenida Gran Capitán. Nº 11",
+            "telefono" : "987654321"
+            
+        }
     ]
-
 }

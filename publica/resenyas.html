@@ -3,13 +3,14 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
+   <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/43/43074.png"/>
         <link rel="stylesheet" href="../recursos/estilos.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="text/javascript" src="../recursos/funciones.js"></script>
         <title>Puzzle</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     
 </head>
 <body onload="cargaPaginaResenyas()">
@@ -39,6 +40,52 @@
         </div>
       </nav>
 <!--Navegador-->
+<div class="container">
+        <img src="../recursos/imagenes/imagenResenyas.jpg" class="img-fluid imagenResenyas" alt="Responsive image">
+        <div class="row text-center" style="margin-top: 5%;">
+                <div class="col-lg-4 col-md-6 col-sm-12 ">
+                    <div class="card  mb-3" style="max-width: 18rem;">
+                        <h3 class="card-header text-success" >Compártenos</h3>
+                        <div class="card-body">
+                            <h5 class="card-title" id="idTextoCompartenos"></h5>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 ">
+                    <div class="card  mb-3" style="max-width: 18rem;">
+                        <h3 class="card-header text-success" >Precio</h3>
+                        <div class="card-body">
+                            <h5 class="card-title"  id="idTextoRangoPrecio" ></h5>
+                            <p class="card-text" id="idPrecioRangoPrecio"></p>
+                            <h5 class="card-title"  id="idTextoTiposDeCocina" ></h5>
+                            <p class="card-text" id="idTextoExplicativoTiposDeCocina"></p>
+                            <p class="card-text" id="idtextoDietasEspeciales"></p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 ">
+                    <div class="card  mb-3" style="max-width: 18rem;">
+                        <h3 class="card-header text-success" id="idTextoUbicacicion"></h3>
+                        <div class="card-body">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3129.681529978225!2d-0.5152254847953659!3d38.333205079661724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6236169e5d7029%3A0x8d4bb29ec296006c!2sIES+Mare+Nostrum!5e0!3m2!1ses!2ses!4v1549965996855" width="100%" height="50%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <h5 class="card-title" id="idUbicacion"></h5>
+
+                            <p class="card-text" id="idtelefono"><i class="fas fa-phone"></i></p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center tituloResenyasCabeza">
+                    <h1>Conoce los comentarios de nuestros clientes</h1>
+                </div>
+        </div>
+
+</div>
+
 
 <div id="comentariosJson" class="container">
 
@@ -47,18 +94,19 @@
 <div class="container">
     <form>
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
             <label for="inputEmail4">Título</label>
             <input type="text" class="form-control" id="idTituloComentario" placeholder="Titulo">
             </div>
         </div>
     <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
             <label for="inputEmail4">Comentario</label>
             <input type="text" class="form-control" id="idCuerpoComentario" placeholder="Comentario">
             </div>
         </div>
-        <button type="button" onclick="crearNuevoComentarioJson()" class="btn btn-success">Escribir</button>
+        <button type="button" onclick="crearNuevoComentarioJson()" class="btn btn-primary">Escribir</button>
+        <button type="reset" class="btn btn-danger">Borrar</button>
         </form>
 </div>
 

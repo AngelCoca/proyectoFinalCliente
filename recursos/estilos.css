@@ -149,3 +149,18 @@ footer{
 .whatsapp-icon{
     margin-left: 25%;
 }
+
+/*RESEÑAS */
+
+.manitaMegusta{
+    color:green;
+}
+
+.manitaNoMeGusta{
+    color:red;
+}
+
+.tituloResenyasCabeza{
+margin-top: 2%;
+margin-bottom: 2%;
+}
