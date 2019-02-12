@@ -247,11 +247,9 @@ function cambioEnCheckBoxRecuerdame(){
 }
 
 function cargaModal(){
-    console.log("Carga modal")
     var user=getCookie("nameUser");
     if (user != "") {
         document.getElementById("nombreInputModal").value = user;
-        console.log("nameUser " + user)
     }
 }
 
@@ -477,23 +475,25 @@ function crearNuevoComentarioJson(){
 
 function crearComentarioNuevo(dato){
 
-try{
-    var datosAMostrar = "";
-    var datosJson = JSON.parse(dato);
+    try
+    {
+        var datosAMostrar = "";
+        var datosJson = JSON.parse(dato);
 
-        datosAMostrar += " <li class='media'>"+
-        "<img  height='64' width='64' src='../recursos/"+datosJson.imagen+"' class='mr-3' alt='Icono perfil'></img>"+
-        "<div class='media-body'>"+
-          "<h5 class='font-weight-bold'>" + datosJson.titulo+"</h5>"+
-          "<p>"+ datosJson.cuerpo+"</p>"+
-          " <p><i class='fas fa-thumbs-up manitaMegusta'></i> Me gusta <i class='fas fa-thumbs-down manitaNoMeGusta'></i> No me gusta</p>"+
-          "</div>"+
-          "</li>"+
-         "<hr>"
-      document.getElementById("listaComentariosJS").innerHTML += datosAMostrar;
-} catch (e){
+            datosAMostrar += " <li class='media'>"+
+            "<img  height='64' width='64' src='../recursos/"+datosJson.imagen+"' class='mr-3' alt='Icono perfil'></img>"+
+            "<div class='media-body'>"+
+            "<h5 class='font-weight-bold'>" + datosJson.titulo+"</h5>"+
+            "<p>"+ datosJson.cuerpo+"</p>"+
+            " <p><i class='fas fa-thumbs-up manitaMegusta'></i> Me gusta <i class='fas fa-thumbs-down manitaNoMeGusta'></i> No me gusta</p>"+
+            "</div>"+
+            "</li>"+
+            "<hr>"
+        document.getElementById("listaComentariosJS").innerHTML += datosAMostrar;
+    } 
+    catch (e){
     console.log("El error -> " +e)
-}
+    }
 }
 
 /*---------RESEÑAS -----------*/
@@ -502,10 +502,64 @@ try{
 /*---------RESERVAS-----------*/
 
 function cargaPaginaReservas() {
-   
+    document.getElementById("modalReservas").style.display = 'none';
+    cambioEnCheckBoxRecuerdame()
+    var user=getCookie("nameUser");
+    var email=getCookie("emailUser");
+
+    if (user != "") {
+        console.log(user)
+        document.getElementById("idNombreFormularioReserva").value = user;
+        document.getElementById("idCorreoFormularioReserva").value = email;
+
+    }
+}
+function realizarReserva(){
+
+console.log("primero")
+   var nombre =  document.getElementById("idNombreFormularioReserva").value;
+   var email =   document.getElementById("idCorreoFormularioReserva").value;
+   var numeroPersonas =  document.getElementById("idNumeroPersonasFormulario").value;
+   var fecha = document.getElementById("idFechaFormularioReserva").value;
+
+    var datosCorrectos =  comprobarDatos(nombre, email, numeroPersonas, fecha)
+
+    if(datosCorrectos){
+        if(checkRecuerdame.checked == true){
+            creaCookies("nameUser", nombre, 30);
+            creaCookies("emailUser", email, 30);
+            document.getElementById("mensajeAvisoCookies").innerHTML = "Si marca esta opción, acepta las cookies."
+          
+        }
+        console.log("casi que llega")
+        mostrarModalFormulario(nombre, email, numeroPersonas, fecha)
+    } else {
+        document.getElementById("mensajeAvisoCookies").innerHTML = "Existen datos vacíos."
+    }
 }
 
 
+function comprobarDatos(nombre, email, numeroPersonas, fecha){
+    var valido = false;
+    if(nombre !=  "" && email !=  "" && numeroPersonas !=  "" && fecha != ""  ){
+        valido = true;
+    }
+    return  valido;
+}
+
+function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
+    console.log("llga")
+    var hayEscrito = false;
+    document.getElementById("modalReservas").style.display = 'block';
+    var textArea = ""
+    if(document.getElementById("exampleFormControlTextarea1").value != ""){
+        textArea = document.getElementById("exampleFormControlTextarea1").value;
+       hayEscrito =  true;
+    }
+
+
+
+}
 
 
 
