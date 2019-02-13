@@ -325,7 +325,6 @@ function crearWhatsapp(){
         mensaje += element+"%0A";
       });
 
-      var cadena = "cadena de texto",
     patron = / /g,
     nuevoValor    = "%20",
     mensaje = mensaje.replace(patron, nuevoValor);
@@ -557,30 +556,37 @@ function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
        hayEscrito =  true;
     }
 
-   // var msgData1 = document.getElementById("idFechaFormularioReserva").value;
-    var horaFin = new Date();
-    horaFin.setSeconds(7200);
-msgData1 = 20190213
-    msgData2 = 20190214
+    var msgData1 = document.getElementById("idFechaFormularioReserva").value;
+    msgData1 = cambiarFecha(msgData1);
+    msgData2 = msgData1;
     msgData3 = "Cerveceria Puzzle"
 
-    console.log("Hora inicio " + msgData1)
-    console.log("Hora Fin " + msgData2)
-    console.log("Lugar " + msgData3)
+    console.log(msgData2)
 
-    try{
+   try{
     var icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Our Company//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:angel.jijona@gmail.com\nDTSTAMP:20120315T170000Z\nATTENDEE;CN=My Self ;RSVP=TRUE:MAILTO:angel.jijona@gmail.com\nORGANIZER;CN=Me:MAILTO::angel.jijona@gmail.com\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nLOCATION:" + msgData3 + "\nSUMMARY:Cerveceria Puzzle\nEND:VEVENT\nEND:VCALENDAR";
 
-    console.log(icsMSG)
+    //console.log(icsMSG)
 
         window.open( "data:text/calendar;charset=utf8," + escape(icsMSG));
     } catch (e) {
-        console.log("Errror en la creación de la cita " + e)
+        console.log("Error en la creación de la cita " + e)
     }
 
 
 }
 
+
+function cambiarFecha(fecha){
+
+    patron = /-/g,
+    nuevoValor  = "",
+    fecha = fecha.replace(patron, nuevoValor);
+    console.log(fecha)
+
+    return fecha;
+
+}
 
 
 
