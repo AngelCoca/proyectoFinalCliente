@@ -569,13 +569,13 @@ function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
     var textArea = "";
 
 
-    var mensajeModal = "<h3>Su reserva se ha complatado exitosamente.</h3>"+
+    var mensajeModal = "<h3>Su reserva se ha completado exitósamente.</h3>"+
         "<p>Te esperamos " + nombre + " el día " + fecha +  " en Cervecería Puzzle </p>"
         
         if(document.getElementById("exampleFormControlTextarea1").value != ""){
             textArea = document.getElementById("exampleFormControlTextarea1").value;
             hayEscrito =  true;
-            mensajeModal += "<p>Tendremos en cuenta " + textArea + " </p>"
+            mensajeModal += "<p>Tendremos en cuenta: " + textArea + " </p>"
         }
    
 
