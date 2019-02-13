@@ -576,6 +576,10 @@ function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
 
 }
 
+function ocultarModalReservas(){
+    document.getElementById("modalReservas").style.display = 'none';
+
+}
 
 function cambiarFecha(fecha){
 
