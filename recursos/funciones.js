@@ -524,6 +524,7 @@ console.log("primero")
     var datosCorrectos =  comprobarDatos(nombre, email, numeroPersonas, fecha)
 
     if(datosCorrectos){
+        document.getElementById("mensajeAvisoCookies").innerHTML = ""
         if(checkRecuerdame.checked == true){
             creaCookies("nameUser", nombre, 30);
             creaCookies("emailUser", email, 30);
@@ -533,7 +534,7 @@ console.log("primero")
         console.log("casi que llega")
         mostrarModalFormulario(nombre, email, numeroPersonas, fecha)
     } else {
-        document.getElementById("mensajeAvisoCookies").innerHTML = "Existen datos vacíos."
+        document.getElementById("mensajeAvisoCookies").innerHTML = "Existen datos incorrectos o vacíos."
     }
 }
 
@@ -542,20 +543,47 @@ function comprobarDatos(nombre, email, numeroPersonas, fecha){
     var valido = false;
     if(nombre !=  "" && email !=  "" && numeroPersonas !=  "" && fecha != ""  ){
         valido = true;
+
+        var expresionTexto = new RegExp("^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{4,}$");
+        var expresionEmail = new RegExp("^[^@]+@[^@]+\.[a-zA-Z]{2,}$");
+        var expresionNumeros = new RegExp("^([0-9])*$");
+
+        var nombreCorrecto = expresionTexto.test(nombre)
+        var emailCorrecto = expresionEmail.test(email);
+        var numerosCorrectos = expresionNumeros.test(numeroPersonas);
+
+        if(!nombreCorrecto || !emailCorrecto || !numerosCorrectos){
+            valido = false;
+        }
+
     }
     return  valido;
+
+
 }
 
 function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
-    console.log("llga")
+
     var hayEscrito = false;
     document.getElementById("modalReservas").style.display = 'block';
     var textArea = "";
-    if(document.getElementById("exampleFormControlTextarea1").value != ""){
-        textArea = document.getElementById("exampleFormControlTextarea1").value;
-       hayEscrito =  true;
-    }
 
+
+    var mensajeModal = "<h3>Su reserva se ha complatado exitosamente.</h3>"+
+        "<p>Te esperamos " + nombre + " el día " + fecha +  " en Cervecería Puzzle </p>"
+        
+        if(document.getElementById("exampleFormControlTextarea1").value != ""){
+            textArea = document.getElementById("exampleFormControlTextarea1").value;
+            hayEscrito =  true;
+            mensajeModal += "<p>Tendremos en cuenta " + textArea + " </p>"
+        }
+   
+
+        document.getElementById("modalCuerpoReservas").innerHTML = mensajeModal;
+}
+
+function guardarEventoEnCalendario(){
+    var email =   document.getElementById("idCorreoFormularioReserva").value;
     var msgData1 = document.getElementById("idFechaFormularioReserva").value;
     msgData1 = cambiarFecha(msgData1);
     msgData2 = msgData1;
@@ -564,7 +592,7 @@ function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
     console.log(msgData2)
 
    try{
-    var icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Our Company//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:angel.jijona@gmail.com\nDTSTAMP:20120315T170000Z\nATTENDEE;CN=My Self ;RSVP=TRUE:MAILTO:angel.jijona@gmail.com\nORGANIZER;CN=Me:MAILTO::angel.jijona@gmail.com\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nLOCATION:" + msgData3 + "\nSUMMARY:Cerveceria Puzzle\nEND:VEVENT\nEND:VCALENDAR";
+    var icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Our Company//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:"+email+"\nDTSTAMP:20120315T170000Z\nATTENDEE;CN=My Self ;RSVP=TRUE:MAILTO:"+email+"\nORGANIZER;CN=Me:MAILTO:"+email+"\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nLOCATION:" + msgData3 + "\nSUMMARY:Cerveceria Puzzle\nEND:VEVENT\nEND:VCALENDAR";
 
     //console.log(icsMSG)
 
@@ -573,12 +601,11 @@ function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
         console.log("Error en la creación de la cita " + e)
     }
 
-
 }
+
 
 function ocultarModalReservas(){
     document.getElementById("modalReservas").style.display = 'none';
-
 }
 
 function cambiarFecha(fecha){
