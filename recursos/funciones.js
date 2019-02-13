@@ -557,11 +557,11 @@ function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
        hayEscrito =  true;
     }
 
-    var msgData1 = document.getElementById("idFechaFormularioReserva").value;
+   // var msgData1 = document.getElementById("idFechaFormularioReserva").value;
     var horaFin = new Date();
     horaFin.setSeconds(7200);
-
-    msgData2 = horaFin
+msgData1 = 20190213
+    msgData2 = 20190214
     msgData3 = "Cerveceria Puzzle"
 
     console.log("Hora inicio " + msgData1)
@@ -569,8 +569,9 @@ function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
     console.log("Lugar " + msgData3)
 
     try{
-    var icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Our Company//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:me@google.com\nDTSTAMP:20120315T170000Z\nATTENDEE;CN=My Self ;RSVP=TRUE:MAILTO:me@gmail.com\nORGANIZER;CN=Me:MAILTO::me@gmail.com\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nLOCATION:" + msgData3 + "\nSUMMARY:Our Meeting Office\nEND:VEVENT\nEND:VCALENDAR";
+    var icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Our Company//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:angel.jijona@gmail.com\nDTSTAMP:20120315T170000Z\nATTENDEE;CN=My Self ;RSVP=TRUE:MAILTO:angel.jijona@gmail.com\nORGANIZER;CN=Me:MAILTO::angel.jijona@gmail.com\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nLOCATION:" + msgData3 + "\nSUMMARY:Cerveceria Puzzle\nEND:VEVENT\nEND:VCALENDAR";
 
+    console.log(icsMSG)
 
         window.open( "data:text/calendar;charset=utf8," + escape(icsMSG));
     } catch (e) {
