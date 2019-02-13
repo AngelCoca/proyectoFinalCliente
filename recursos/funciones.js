@@ -551,12 +551,31 @@ function mostrarModalFormulario(nombre, email, numeroPersonas, fecha){
     console.log("llga")
     var hayEscrito = false;
     document.getElementById("modalReservas").style.display = 'block';
-    var textArea = ""
+    var textArea = "";
     if(document.getElementById("exampleFormControlTextarea1").value != ""){
         textArea = document.getElementById("exampleFormControlTextarea1").value;
        hayEscrito =  true;
     }
 
+    var msgData1 = document.getElementById("idFechaFormularioReserva").value;
+    var horaFin = new Date();
+    horaFin.setSeconds(7200);
+
+    msgData2 = horaFin
+    msgData3 = "Cerveceria Puzzle"
+
+    console.log("Hora inicio " + msgData1)
+    console.log("Hora Fin " + msgData2)
+    console.log("Lugar " + msgData3)
+
+    try{
+    var icsMSG = "BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Our Company//NONSGML v1.0//EN\nBEGIN:VEVENT\nUID:me@google.com\nDTSTAMP:20120315T170000Z\nATTENDEE;CN=My Self ;RSVP=TRUE:MAILTO:me@gmail.com\nORGANIZER;CN=Me:MAILTO::me@gmail.com\nDTSTART:" + msgData1 +"\nDTEND:" + msgData2 +"\nLOCATION:" + msgData3 + "\nSUMMARY:Our Meeting Office\nEND:VEVENT\nEND:VCALENDAR";
+
+
+        window.open( "data:text/calendar;charset=utf8," + escape(icsMSG));
+    } catch (e) {
+        console.log("Errror en la creación de la cita " + e)
+    }
 
 
 }
