@@ -48,12 +48,14 @@ function cargaPaginaPrincipal(){
     iniciarArray();
 }
 
+/*---------- EVENTO RATON ----------*/
 function cervezaSi(cerveza){
     iniciarArray();
     document.getElementById("idContenedorCerveza").style.display = 'block'
     completarInformacionCerveza(cerveza);
 }
 
+/*---------- EVENTO RATON ----------*/
 function cervezaNo(cerveza){
     document.getElementById("idContenedorCerveza").style.display = 'none'
 }
@@ -145,7 +147,7 @@ function rellenarPedido(platoElegido){
 
     if(platosPedidos <9){
        
-
+/*------ DOM ----------*/
         var node = document.createElement("li");
         var textnode = document.createTextNode(platoElegido);
         node.appendChild(textnode);
@@ -253,6 +255,8 @@ function cargaModal(){
     }
 }
 
+
+/*---------COOKIES -----------*/
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
@@ -269,6 +273,8 @@ function getCookie(cname) {
     return "";
   }
 
+
+  /*---------COOKIES -----------*/
 function creaCookies(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -289,7 +295,7 @@ function creaCookies(cname,cvalue,exdays) {
                 creaCookies("nameUser", nombreCliente, 30);
             }
 
-            crearMensaje("w");
+            crearWhatsapp()
 
         } else {
             document.getElementById("mensajeAvisoCookies").innerHTML = "Campos vacíos";
@@ -300,16 +306,7 @@ function creaCookies(cname,cvalue,exdays) {
     }
 }
 
-function crearMensaje(app){
 
-    if(app == "w"){
-        crearWhatsapp()
-    } else if (app =="t") {
-        
-    } else {
-        
-    }
-}
    
 function crearWhatsapp(){
     var nombreCliente = document.getElementById("nombreInputModal").value;
@@ -345,6 +342,19 @@ function crearWhatsapp(){
 
 
 /*-------VALIDADORES------------*/
+
+
+
+/*-------FUNCION TECLADO onkeyup------------*/
+function convertirPrimeraLetraMayuscula(){
+    var x = document.getElementById("nombreInputModal");
+    if(x.value.length == 1){
+        x.value = x.value.toUpperCase();
+    }
+}
+
+
+/*-------FUNCION TECLADO onkeydown------------*/
 function pulsadoNombre(e){
 
     var esTexto = comprobarSiEsTexto(e);
@@ -544,8 +554,12 @@ function comprobarDatos(nombre, email, numeroPersonas, fecha){
     if(nombre !=  "" && email !=  "" && numeroPersonas !=  "" && fecha != ""  ){
         valido = true;
 
+        /*---------EXPRESIONES -----------*/
+        /*---------EXPRESION NOMBRE -----------*/
         var expresionTexto = new RegExp("^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{4,}$");
+        /*---------EXPRESION EMAIL -----------*/
         var expresionEmail = new RegExp("^[^@]+@[^@]+\.[a-zA-Z]{2,}$");
+        /*---------EXPRESION NUMEROS -----------*/
         var expresionNumeros = new RegExp("^([0-9])*$");
 
         var nombreCorrecto = expresionTexto.test(nombre)
@@ -624,7 +638,7 @@ function cambiarFecha(fecha){
 
 /*---------RESERVAS-----------*/
 
-
+/*---------COOKIES -----------*/
 function deleteAllCookies(){
     document.cookie.split(";").forEach(function(c) { 
         document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" 
